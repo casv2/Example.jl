@@ -1,10 +1,18 @@
 module Example
 
-export hello, domath
+export unfold
 
-hello(who::String) = "Hello, $who"
-domath(x::Number) = x + 5
-
+function unfold(A)
+    V = []
+    for x in A
+        if x === A
+            push!(V, x)
+        else
+            append!(V, unfold(x))
+        end
+    end
+    V
+end
 # package code goes here
 
 end # module
