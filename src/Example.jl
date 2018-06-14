@@ -7,7 +7,7 @@ using NBodyIPs.Data: Dat
 using Plots; gr()
 
 using PyCall
-unshift!(PyVector(pyimport("sys")["path"]), "")
+unshift!(PyVector(pyimport("sys")["path"]), Pkg.dir()*"/Example")
 
 @pyimport plottools
 @pyimport numpy
